@@ -1,0 +1,29 @@
+<div class="p-2">
+  <table class="min-w-full bg-white rounded shadow border border-gray-300">
+    <thead>
+    <tr class="">
+      <th class="">Keys</th>
+      @for (key of keys; track key) {
+        <th class="">
+          {{ key }}
+        </th>
+      }
+    </tr>
+    </thead>
+    <tbody class="border">
+      @for (lang of languages; track lang) {
+          <tr class="min-h-full border border-gray-200">
+            <th class="text-start">
+              {{ lang }}
+            </th>
+            @for (key of keys; track key) {
+
+              <td class="border border-gray-200" contenteditable="true">
+                <input type="text" class="h-fit text-pretty " [(ngModel)]="translation[key][lang]">
+              </td>
+            }
+          </tr>
+      }
+    </tbody>
+  </table>
+</div>
