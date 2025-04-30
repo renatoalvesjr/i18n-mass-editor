@@ -4,16 +4,17 @@
     <app-file-upload (filesLoaded)="onFilesLoaded($event)"></app-file-upload>
   </div>
 
-  @if (translations) {
-    <div class="flex justify-end mb-4">
-      <button (click)="saveFiles()"
-              class="bg-blue-600 text-white font-semibold px-4 py-2 rounded shadow hover:bg-blue-700 transition">
-        💾 Save Translations
-      </button>
-    </div>
-    <div>
-      <app-translation-table [translation]="translations"></app-translation-table>
-    </div>
+  <!--  @if (translations) {-->
+  <div class="flex justify-start mb-4">
+    <button (click)="saveFiles()"
+            class="bg-blue-600 text-white font-semibold px-4 py-2 rounded shadow hover:bg-blue-700 transition">
+      💾 Save Translations
+    </button>
+  </div>
 
-  }
+  <div>
+    <app-translation-table [translation]="translations!"></app-translation-table>
+  </div>
+
+  <!--  }-->
 </div>
